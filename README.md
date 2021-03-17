@@ -14,11 +14,20 @@ dia 17/3/2021
 1. Atributos de Cliente:
     *  Nome Completo 
     *  CPF ou CNPJ
-    *  Data de nascimento
     *  e-mail
     *  telefone para contato
     *  Endenreco (será uma modelo endereço)
 
+
+1.2 Atributos de endereco:
+   *  rua
+   *  número
+   *  cidade
+   *  cidade
+   *  estado
+   *  cep
+
+ 
 2. Atributos de veículo:
     *  tipo de veículo
     *  marca do veículo
