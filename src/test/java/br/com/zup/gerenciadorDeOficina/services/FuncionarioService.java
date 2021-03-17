@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class FuncionarioService {
 
-    private static List<Funcionario> funcionarios =new ArrayList<>();
+    private List<Funcionario> funcionarios =new ArrayList<>();
 
     public Funcionario cadastrarFuncionario(Funcionario funcionario){
         funcionarios.add(funcionario);

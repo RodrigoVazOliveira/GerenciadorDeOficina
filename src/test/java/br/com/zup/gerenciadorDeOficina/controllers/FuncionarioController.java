@@ -14,11 +14,10 @@ public class FuncionarioController {
     private FuncionarioService funcionarioService;
 
     @PostMapping
-    public Funcionario cadastroFuncionario(Funcionario funcionario){
+    @ResponseStatus(HttpStatus.CREATED)
+    public Funcionario cadastroFuncionario(@RequestBody Funcionario funcionario){
         Funcionario objFunc = cadastroFuncionario(funcionario);
         return objFunc;
     }
-
-
 
 }
