@@ -15,4 +15,12 @@ public class ClienteService {
         return cliente;
     }
 
+    public Cliente pesquisarPeloCpfOuCnpj(String cpfCnpj) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCpf().equalsIgnoreCase(cpfCnpj) || cliente.getCnpj().equalsIgnoreCase(cpfCnpj)) {
+                return cliente;
+            }
+        }
+        throw new RuntimeException("Cliente não encontrado!");
+    }
 }
