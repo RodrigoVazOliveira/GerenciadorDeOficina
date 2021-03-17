@@ -1,6 +1,6 @@
-package br.com.zup.gerenciadorDeOficina.service;
+package br.com.zup.gerenciadorDeOficina.services;
 
-import br.com.zup.gerenciadorDeOficina.model.Funcionario;
+import br.com.zup.gerenciadorDeOficina.models.Funcionario;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
