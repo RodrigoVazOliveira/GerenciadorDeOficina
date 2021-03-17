@@ -1,4 +1,4 @@
-package br.com.zup.gerenciadorDeOficina.models;
+package br.com.zup.gerenciadorDeOficina.models.enums;
 
 public enum Andamento {
     INICIADO, PENDENTE, CONCLUIDO;

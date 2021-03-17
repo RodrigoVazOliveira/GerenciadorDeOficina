@@ -1,4 +1,6 @@
-package br.com.zup.gerenciadorDeOficina.models;
+package br.com.zup.gerenciadorDeOficina.models.;
+
+import br.com.zup.gerenciadorDeOficina.models.enums.Andamento;
 
 import java.time.LocalDate;
 
