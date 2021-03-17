@@ -1,4 +1,4 @@
-package br.com.zup.gerenciadorDeOficina.model;
+package br.com.zup.gerenciadorDeOficina.models;
 
 public class Endereco {
     private String rua;
