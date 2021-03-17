@@ -1,17 +1,18 @@
 package br.com.zup.gerenciadorDeOficina.dtos;
 
 import br.com.zup.gerenciadorDeOficina.models.Cliente;
+import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 
-public class CadastrarVeiculo {
+public class CadastrarVeiculoDTO {
     private String tipoDeVeiculo;
-    private String nomeDoVeiculo;
+    private String marcaDoVeiculo;
     private String modeloDoVeiculo;
     private Integer anoDoVeiculo;
     private String placaDoVeiculo;
     private String chassi;
     private String cpfOuCnpj;
 
-    public CadastrarVeiculo() {
+    public CadastrarVeiculoDTO() {
     }
 
     public String getTipoDeVeiculo() {
@@ -22,12 +23,12 @@ public class CadastrarVeiculo {
         this.tipoDeVeiculo = tipoDeVeiculo;
     }
 
-    public String getNomeDoVeiculo() {
-        return nomeDoVeiculo;
+    public String getMarcaDoVeiculo() {
+        return marcaDoVeiculo;
     }
 
-    public void setNomeDoVeiculo(String nomeDoVeiculo) {
-        this.nomeDoVeiculo = nomeDoVeiculo;
+    public void setMarcaDoVeiculo(String marcaDoVeiculo) {
+        this.marcaDoVeiculo = marcaDoVeiculo;
     }
 
     public String getModeloDoVeiculo() {
@@ -68,5 +69,18 @@ public class CadastrarVeiculo {
 
     public void setCpfOuCnpj(String cpfOuCnpj) {
         this.cpfOuCnpj = cpfOuCnpj;
+    }
+
+    public Veiculo converterCadastrarVeiculoDTOparaVeiculo(Cliente donoDoVeiculo) {
+        Veiculo veiculo = new Veiculo();
+        veiculo.setTipoDeVeiculo(this.tipoDeVeiculo);
+        veiculo.setMarcaDoVeiculo(this.marcaDoVeiculo);
+        veiculo.setAnoDoVeiculo(this.anoDoVeiculo);
+        veiculo.setModeloDoVeiculo(this.modeloDoVeiculo);
+        veiculo.setPlacaDoVeiculo(this.placaDoVeiculo);
+        veiculo.setChassi(this.chassi);
+        veiculo.setDonoDoVeiculo(donoDoVeiculo);
+
+        return veiculo;
     }
 }
