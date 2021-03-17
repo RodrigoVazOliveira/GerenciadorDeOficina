@@ -3,7 +3,7 @@ package br.com.zup.gerenciadorDeOficina.models;
 public class Veiculo {
 
     private String tipoDeVeiculo;
-    private String nomeDoVeiculo;
+    private String marcaDoVeiculo;
     private String modeloDoVeiculo;
     private Integer anoDoVeiculo;
     private String placaDoVeiculo;
@@ -21,12 +21,12 @@ public class Veiculo {
         this.tipoDeVeiculo = tipoDeVeiculo;
     }
 
-    public String getNomeDoVeiculo() {
-        return nomeDoVeiculo;
+    public String getMarcaDoVeiculo() {
+        return marcaDoVeiculo;
     }
 
-    public void setNomeDoVeiculo(String nomeDoVeiculo) {
-        this.nomeDoVeiculo = nomeDoVeiculo;
+    public void setMarcaDoVeiculo(String marcaDoVeiculo) {
+        this.marcaDoVeiculo = marcaDoVeiculo;
     }
 
     public String getModeloDoVeiculo() {
