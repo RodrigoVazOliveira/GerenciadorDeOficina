@@ -5,6 +5,7 @@ import br.com.zup.gerenciadorDeOficina.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
@@ -19,5 +20,17 @@ public class ControllerCliente {
     public Cliente cadastrarCliente(@RequestBody Cliente cliente){
     clienteService.cadastrarCliente(cliente);
     return cliente;
+    }
+
+    @GetMapping("{cpfCnpj}/")
+    @ResponseStatus(HttpStatus.OK)
+    public Cliente pesquisarPeloCpfOuCnpj(@PathVariable String cpfCnpj){
+
+        try{
+            Cliente cliente = clienteService.pesquisarPeloCpfOuCnpj(cpfCnpj);
+            return cliente;
+        }catch (RuntimeException exception){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, exception.getMessage());
+        }
     }
 }
