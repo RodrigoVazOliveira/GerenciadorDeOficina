@@ -7,9 +7,10 @@ dia 17/3/2021
 1. Cadastrar cliente - Weslley - endpoint /clientes/ POST - conclúido
 2. Cadastrar veículo - Rodrigo - endpoint /veiculos/ POST - concluído
 3. Cadastrar funcionário - Kaio - endpoint /funcionarios/ POST -  
-4. Cadastrar serviço - Weslley - endpoint /servicoes/ POST
+4. Cadastrar serviço - Rodrigo - endpoint /servicoes/ POST - concluído
 5. Fazer DTO de cadastro do veículo - Rodrigo - concluído
 6. Pesquisar Cliente pelo CPF - Weslley - endpoint /clientes/{cpf}/ - concluído
+7. incluir swagger para testes - Weslley - 
 
 **definição de modelos**
 ----
