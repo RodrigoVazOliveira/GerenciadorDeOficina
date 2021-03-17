@@ -4,9 +4,9 @@
 
 dia 17/3/2021 
 
-1. Cadastrar cliente - Weslley - endpoint /clientes/ POST
+1. Cadastrar cliente - Weslley - endpoint /clientes/ POST - conclúido
 2. Cadastrar veículo - Rodrigo - endpoint /veiculos/ POST - concluído
-3. Cadastrar funcionário - Kaio - endpoint /funcionarios/ POST
+3. Cadastrar funcionário - Kaio - endpoint /funcionarios/ POST - concluído
 4. Cadastrar serviço - Weslley - endpoint /servicoes/ POST
 
 **definição de modelos**
