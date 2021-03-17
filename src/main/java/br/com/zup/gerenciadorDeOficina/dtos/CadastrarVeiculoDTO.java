@@ -1,16 +1,18 @@
-package br.com.zup.gerenciadorDeOficina.models;
+package br.com.zup.gerenciadorDeOficina.dtos;
 
-public class Veiculo {
+import br.com.zup.gerenciadorDeOficina.models.Cliente;
+import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 
+public class CadastrarVeiculoDTO {
     private String tipoDeVeiculo;
     private String marcaDoVeiculo;
     private String modeloDoVeiculo;
     private Integer anoDoVeiculo;
     private String placaDoVeiculo;
     private String chassi;
-    private Cliente donoDoVeiculo;
+    private String cpfOuCnpj;
 
-    public Veiculo() {
+    public CadastrarVeiculoDTO() {
     }
 
     public String getTipoDeVeiculo() {
@@ -61,11 +63,24 @@ public class Veiculo {
         this.chassi = chassi;
     }
 
-    public Cliente getDonoDoVeiculo() {
-        return donoDoVeiculo;
+    public String getCpfOuCnpj() {
+        return cpfOuCnpj;
     }
 
-    public void setDonoDoVeiculo(Cliente donoDoVeiculo) {
-        this.donoDoVeiculo = donoDoVeiculo;
+    public void setCpfOuCnpj(String cpfOuCnpj) {
+        this.cpfOuCnpj = cpfOuCnpj;
+    }
+
+    public Veiculo converterCadastrarVeiculoDTOparaVeiculo(Cliente donoDoVeiculo) {
+        Veiculo veiculo = new Veiculo();
+        veiculo.setTipoDeVeiculo(this.tipoDeVeiculo);
+        veiculo.setMarcaDoVeiculo(this.marcaDoVeiculo);
+        veiculo.setAnoDoVeiculo(this.anoDoVeiculo);
+        veiculo.setModeloDoVeiculo(this.modeloDoVeiculo);
+        veiculo.setPlacaDoVeiculo(this.placaDoVeiculo);
+        veiculo.setChassi(this.chassi);
+        veiculo.setDonoDoVeiculo(donoDoVeiculo);
+
+        return veiculo;
     }
 }
