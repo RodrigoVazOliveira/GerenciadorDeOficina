@@ -1,4 +1,4 @@
-package br.com.zup.gerenciadorDeOficina.models;
+package br.com.zup.gerenciadorDeOficina.model;
 
 import java.time.LocalDate;
 

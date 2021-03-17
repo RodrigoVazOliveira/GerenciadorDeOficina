@@ -1,13 +1,12 @@
 package br.com.zup.gerenciadorDeOficina.service;
 
-import br.com.zup.gerenciadorDeOficina.models.Funcionario;
+import br.com.zup.gerenciadorDeOficina.model.Funcionario;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class funcionarioService {
+public class FuncionarioService {
 
     private static List<Funcionario> funcionarios =new ArrayList<>();
 
@@ -16,6 +15,5 @@ public class funcionarioService {
         return funcionario;
 
     }
-
 
 }
