@@ -5,20 +5,20 @@ import javax.validation.constraints.NotNull;
 
 public class Endereco {
 
-    @NotBlank(message = "Campo do nome não pode ser vazio!")
-    @NotNull(message = "O campo do nome não foi informada")
+    @NotBlank(message = "Campo rua não pode ser vazio!")
+    @NotNull(message = "O campo rua não foi informada")
     private String rua;
 
-    @NotBlank(message = "Campo do nome não pode ser vazio!")
-    @NotNull(message = "O campo do nome não foi informada")
+    @NotBlank(message = "Campo número não pode ser vazio!")
+    @NotNull(message = "O campo número não foi informada")
     private int    numero;
 
-    @NotBlank(message = "Campo do nome não pode ser vazio!")
-    @NotNull(message = "O campo do nome não foi informada")
+    @NotBlank(message = "Campo cidade não pode ser vazio!")
+    @NotNull(message = "O campo cidade não foi informada")
     private String cidade;
 
-    @NotBlank(message = "Campo do nome não pode ser vazio!")
-    @NotNull(message = "O campo do nome não foi informada")
+    @NotBlank(message = "Campo estado não pode ser vazio!")
+    @NotNull(message = "O campo estado não foi informada")
     private String estado;
     private int    cep;
 
