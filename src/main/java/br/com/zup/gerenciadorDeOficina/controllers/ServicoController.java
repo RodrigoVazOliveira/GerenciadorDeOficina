@@ -26,7 +26,7 @@ public class ServicoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Servico cadastrarServico(@RequestBody CadastrarServicoDTO cadastrarServicoDTO) {
+    public Servico cadastrarServico(@RequestBody CadastrarServicoDTO cadastrarServicoDTO) throws RuntimeException {
         Veiculo veiculo = veiculoService.pesquisarChassi(cadastrarServicoDTO.getChassi());
         Funcionario funcionario = funcionarioService.pesquisarPorCpf(cadastrarServicoDTO.getCpfFuncionario());
         return servicoService.cadatrar(cadastrarServicoDTO.converterCadastrarServicoDTOParaServico(veiculo, funcionario));
