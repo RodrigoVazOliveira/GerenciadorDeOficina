@@ -1,9 +1,24 @@
 package br.com.zup.gerenciadorDeOficina.models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class Endereco {
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
     private String rua;
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
     private int    numero;
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
     private String cidade;
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
     private String estado;
     private int    cep;
 
