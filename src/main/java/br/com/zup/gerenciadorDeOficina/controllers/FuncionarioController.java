@@ -15,9 +15,9 @@ public class FuncionarioController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Funcionario cadastrarFuncionario (@RequestBody Funcionario funcionario){
+    public void cadastrarFuncionario (@RequestBody Funcionario funcionario){
         funcionarioService.cadastrarFuncionario(funcionario);
-        return funcionario;
+
     }
 
 }
