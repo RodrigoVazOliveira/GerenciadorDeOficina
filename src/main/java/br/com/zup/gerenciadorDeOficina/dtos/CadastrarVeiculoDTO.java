@@ -12,8 +12,8 @@ public class CadastrarVeiculoDTO {
     @NotNull(message = "O campo do tipo de Veículo  não foi informada")
     private String tipoDeVeiculo;
 
-    @NotBlank(message = "Campo do tipo de Veículo não pode ser vazio!")
-    @NotNull(message = "O campo do tipo de Veículo  não foi informada")
+    @NotBlank(message = "Campo do marca de Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do marca de Veículo  não foi informada")
     private String marcaDoVeiculo;
 
     @NotBlank(message = "Campo do modelo de Veículo não pode ser vazio!")
@@ -34,7 +34,7 @@ public class CadastrarVeiculoDTO {
 
     @NotBlank(message = "Campo do nome não pode ser vazio!")
     @NotNull(message = "O campo do nome não foi informada")
-    @CPF(message = "Campo do nome CPF está inválido!")
+    @CPF(message = "Campo do CPF está inválido!")
     private String cpf;
 
     public CadastrarVeiculoDTO() {
