@@ -2,7 +2,6 @@ package br.com.zup.gerenciadorDeOficina.services;
 
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,4 +15,13 @@ public class VeiculoService {
 
         return veiculo;
     }
+
+    public Veiculo pesquisarChassi(String chassi) {
+        for (Veiculo veiculo : veiculos) {
+            if (veiculo.getChassi().equals(chassi)) {
+                return veiculo;
+            }
+        }
+    }
+
 }
