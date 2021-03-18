@@ -19,7 +19,7 @@ public class ClienteService {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf().equalsIgnoreCase(cpfCnpj) || cliente.getCnpj().equalsIgnoreCase(cpfCnpj)) {
                 return cliente;
-            }
+            }   
         }
         throw new RuntimeException("Cliente não encontrado!");
     }
