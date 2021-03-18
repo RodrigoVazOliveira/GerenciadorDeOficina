@@ -20,7 +20,6 @@ public class CadastrarVeiculoDTO {
     @NotNull(message = "O campo do modelo de Veículo  não foi informada")
     private String modeloDoVeiculo;
 
-    @NotBlank(message = "Campo do ano de Veículo não pode ser vazio!")
     @NotNull(message = "O campo do ano de Veículo  não foi informada")
     private Integer anoDoVeiculo;
 
@@ -92,7 +91,7 @@ public class CadastrarVeiculoDTO {
         return cpf;
     }
 
-    public void setCpfOuCnpj(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
