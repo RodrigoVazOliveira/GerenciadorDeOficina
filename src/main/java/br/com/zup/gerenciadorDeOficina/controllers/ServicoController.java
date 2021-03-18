@@ -1,7 +1,6 @@
 package br.com.zup.gerenciadorDeOficina.controllers;
 
 import br.com.zup.gerenciadorDeOficina.dtos.CadastrarServicoDTO;
-import br.com.zup.gerenciadorDeOficina.dtos.CadastrarVeiculoDTO;
 import br.com.zup.gerenciadorDeOficina.models.Funcionario;
 import br.com.zup.gerenciadorDeOficina.models.Servico;
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
