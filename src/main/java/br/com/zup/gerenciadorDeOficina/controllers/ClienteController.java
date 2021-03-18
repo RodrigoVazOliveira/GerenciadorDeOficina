@@ -22,12 +22,12 @@ public class ClienteController {
     return cliente;
     }
 
-    @GetMapping("{cpfCnpj}/")
+    @GetMapping("{cpf}/")
     @ResponseStatus(HttpStatus.OK)
-    public Cliente pesquisarPeloCpfOuCnpj(@PathVariable String cpfCnpj){
+    public Cliente pesquisarPeloCpfOuCnpj(@PathVariable String cpf){
 
         try{
-            Cliente cliente = clienteService.pesquisarPeloCpfOuCnpj(cpfCnpj);
+            Cliente cliente = clienteService.pesquisarPeloCpf(cpf);
             return cliente;
         }catch (RuntimeException exception){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, exception.getMessage());

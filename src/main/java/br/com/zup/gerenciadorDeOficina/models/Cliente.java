@@ -3,7 +3,6 @@ package br.com.zup.gerenciadorDeOficina.models;
 public class Cliente {
     private String nomeCompleto;
     private String cpf;
-    private String cnpj;
     private String emil;
     private String telefone;
 
@@ -26,14 +25,6 @@ public class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
     }
 
     public String getEmil() {
