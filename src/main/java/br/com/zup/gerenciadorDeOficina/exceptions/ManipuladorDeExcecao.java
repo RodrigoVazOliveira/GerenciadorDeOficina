@@ -80,4 +80,21 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
         return respostaDeErro;
     }
 
+    @ExceptionHandler({FuncionarioExistenteException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RespostaDeErro veiculoDuplicadoExcecao(FuncionarioExistenteException ex) {
+        ObjetoDeErro objetoDeErro = new ObjetoDeErro(
+                ex.getMessage(),
+                ex.getCampo()
+        );
+        RespostaDeErro respostaDeErro = new RespostaDeErro(
+                ex.getTipoErro(),
+                ex.getStatus(),
+                ex.getRazao(),
+                Arrays.asList(objetoDeErro)
+        );
+
+        return respostaDeErro;
+    }
+
 }
