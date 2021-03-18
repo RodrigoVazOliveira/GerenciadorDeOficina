@@ -2,15 +2,40 @@ package br.com.zup.gerenciadorDeOficina.dtos;
 
 import br.com.zup.gerenciadorDeOficina.models.Cliente;
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
+import org.hibernate.validator.constraints.br.CPF;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class CadastrarVeiculoDTO {
+    @NotBlank(message = "Campo do tipo de Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do tipo de Veículo  não foi informada")
     private String tipoDeVeiculo;
+
+    @NotBlank(message = "Campo do tipo de Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do tipo de Veículo  não foi informada")
     private String marcaDoVeiculo;
+
+    @NotBlank(message = "Campo do modelo de Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do modelo de Veículo  não foi informada")
     private String modeloDoVeiculo;
+
+    @NotBlank(message = "Campo do ano de Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do ano de Veículo  não foi informada")
     private Integer anoDoVeiculo;
+
+    @NotBlank(message = "Campo do  placa do Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do placa  do Veículo  não foi informada")
     private String placaDoVeiculo;
+
+    @NotBlank(message = "Campo do chassi de Veículo não pode ser vazio!")
+    @NotNull(message = "O campo do chassi de Veículo  não foi informada")
     private String chassi;
-    private String cpfOuCnpj;
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
+    @CPF(message = "Campo do nome CPF está inválido!")
+    private String cpf;
 
     public CadastrarVeiculoDTO() {
     }
@@ -63,12 +88,12 @@ public class CadastrarVeiculoDTO {
         this.chassi = chassi;
     }
 
-    public String getCpfOuCnpj() {
-        return cpfOuCnpj;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCpfOuCnpj(String cpfOuCnpj) {
-        this.cpfOuCnpj = cpfOuCnpj;
+    public void setCpfOuCnpj(String cpf) {
+        this.cpf = cpf;
     }
 
     public Veiculo converterCadastrarVeiculoDTOparaVeiculo(Cliente donoDoVeiculo) {
