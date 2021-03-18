@@ -1,5 +1,8 @@
 package br.com.zup.gerenciadorDeOficina.dtos;
 
+import br.com.zup.gerenciadorDeOficina.models.Funcionario;
+import br.com.zup.gerenciadorDeOficina.models.Servico;
+import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 import br.com.zup.gerenciadorDeOficina.models.enums.Andamento;
 
 import java.time.LocalDate;
@@ -80,5 +83,19 @@ public class CadastrarServicoDTO {
 
     public void setResponsavelPeloServico(String responsavelPeloServico) {
         this.responsavelPeloServico = responsavelPeloServico;
+    }
+
+    public Servico converterCadastrarServicoDTOParaServico(Veiculo veiculo, Funcionario funcionario) {
+        Servico servico = new Servico();
+        servico.setOrdemDeServico(this.ordemDeServico);
+        servico.setVeiculo(veiculo);
+        servico.setDataDeEntrada(this.dataDeEntrada);
+        servico.setDataDeSaida(this.dataDeSaida);
+        servico.setTipoDeServico(this.tipoDeServico);
+        servico.setAndamento(this.andamento);
+        servico.setFuncionario(funcionario);
+        servico.setResponsavelPeloServico(responsavelPeloServico);
+
+        return servico;
     }
 }

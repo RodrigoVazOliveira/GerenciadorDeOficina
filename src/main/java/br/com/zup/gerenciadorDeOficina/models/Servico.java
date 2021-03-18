@@ -82,17 +82,4 @@ public class Servico {
         this.responsavelPeloServico = responsavelPeloServico;
     }
 
-    public Servico converterCadastrarServicoDTOParaServico(Veiculo veiculo, Funcionario funcionario) {
-        Servico servico = new Servico();
-        servico.setOrdemDeServico(this.ordemDeServico);
-        servico.setVeiculo(veiculo);
-        servico.setDataDeEntrada(this.dataDeEntrada);
-        servico.setDataDeSaida(this.dataDeSaida);
-        servico.setTipoDeServico(this.tipoDeServico);
-        servico.setAndamento(this.andamento);
-        servico.setFuncionario(funcionario);
-        servico.setResponsavelPeloServico(responsavelPeloServico);
-
-        return servico;
-    }
 }
