@@ -20,4 +20,12 @@ public class FuncionarioService {
 
     }
 
+    public Funcionario pesquisarPorCpf(String cpf) {
+        for (Funcionario funcionario : funcionarios) {
+            if (funcionario.getCpf().equals(cpf)) {
+                return funcionario;
+            }
+        }
+    }
+
 }
