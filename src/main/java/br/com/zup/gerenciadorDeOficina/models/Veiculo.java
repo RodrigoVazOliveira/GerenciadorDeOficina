@@ -1,5 +1,7 @@
 package br.com.zup.gerenciadorDeOficina.models;
 
+import java.util.Objects;
+
 public class Veiculo {
 
     private String tipoDeVeiculo;
@@ -69,4 +71,16 @@ public class Veiculo {
         this.donoDoVeiculo = donoDoVeiculo;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Veiculo veiculo = (Veiculo) o;
+        return Objects.equals(chassi, veiculo.chassi);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(chassi);
+    }
 }

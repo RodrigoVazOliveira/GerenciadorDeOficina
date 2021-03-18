@@ -20,7 +20,7 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         List<ObjetoDeErro> objetoDeErros = getErros(ex);
-        RespostaDeErro respostaDeErro = new RespostaDeErro("Validação" , status.value(),
+        RespostaDeErro respostaDeErro = new RespostaDeErro("Validação", status.value(),
                 status.getReasonPhrase(), objetoDeErros);
         return ResponseEntity.status(status).body(respostaDeErro);
     }
@@ -33,6 +33,7 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler({RuntimeException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public RespostaDeErro manipularRuntimeException(RuntimeException ex) {
         ObjetoDeErro objetoDeErro = new ObjetoDeErro(
                 ex.getMessage(),
@@ -47,6 +48,7 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
 
         return respostaDeErro;
     }
+
     @ExceptionHandler({ClienteDuplicadoExcecao.class})
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public RespostaDeErro clienteDuplicadoExcecao(ClienteDuplicadoExcecao excecao) {
@@ -60,7 +62,22 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
                 Arrays.asList(objetoDeErro));
         return respostaDeErro;
     }
+
+    @ExceptionHandler({VeiculoDuplicadoExcecao.class})
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    public RespostaDeErro veiculoDuplicadoExcecao(VeiculoDuplicadoExcecao ex) {
+        ObjetoDeErro objetoDeErro = new ObjetoDeErro(
+                ex.getMessage(),
+                ex.getCampo()
+        );
+        RespostaDeErro respostaDeErro = new RespostaDeErro(
+                ex.getTipoErro(),
+                ex.getStatus(),
+                ex.getRazao(),
+                Arrays.asList(objetoDeErro)
+        );
+
+        return respostaDeErro;
+    }
+
 }
-
-
-
