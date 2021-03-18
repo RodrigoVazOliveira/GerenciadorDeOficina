@@ -1,8 +1,27 @@
 package br.com.zup.gerenciadorDeOficina.models;
 
+import org.hibernate.validator.constraints.br.CPF;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class Cliente {
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
     private String nomeCompleto;
+
+
+    @NotBlank(message = "Campo do nome não pode ser vazio!")
+    @NotNull(message = "O campo do nome não foi informada")
+    @CPF(message = "Campo do nome CPF está inválido!")
     private String cpf;
+
+
+    @NotBlank(message = "Campo do e-mail não pode ser vazio!")
+    @NotNull(message = "O campo e-mail não foi informada")
+    @Email(message = "O e-mail informado é inválido!")
     private String email;
     private String telefone;
 
@@ -31,7 +50,7 @@ public class Cliente {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmil(String email) {
         this.email = email;
     }
 
