@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/servicos/")
 public class ServicoController {
@@ -27,7 +29,7 @@ public class ServicoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Servico cadastrarServico(@RequestBody CadastrarServicoDTO cadastrarServicoDTO) {
+    public Servico cadastrarServico(@RequestBody  @Valid CadastrarServicoDTO cadastrarServicoDTO) {
         try {
             Veiculo veiculo = veiculoService.pesquisarChassi(cadastrarServicoDTO.getChassi());
             Funcionario funcionario = funcionarioService.pesquisarPorCpf(cadastrarServicoDTO.getCpfFuncionario());

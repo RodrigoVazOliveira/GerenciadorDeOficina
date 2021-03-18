@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/veiculos/")
 public class VeiculoController {
@@ -21,7 +23,7 @@ public class VeiculoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Veiculo cadastrar(@RequestBody CadastrarVeiculoDTO cadastrarVeiculoDTO) {
+    public Veiculo cadastrar(@RequestBody @Valid CadastrarVeiculoDTO cadastrarVeiculoDTO) {
         Cliente cliente = clienteService.pesquisarPeloCpf(cadastrarVeiculoDTO.getCpf());
         return veiculoService.cadastrar(cadastrarVeiculoDTO.converterCadastrarVeiculoDTOparaVeiculo(cliente));
     }
