@@ -12,10 +12,12 @@ dia 17/3/2021
 6. Pesquisar Cliente pelo CPF - Weslley - endpoint /clientes/{cpf}/ - concluído
 7. incluir swagger para testes - Weslley - concluído  
 8. Criar DTO de serviço - Rodrigo 
-9. Pesquisar veículo pelo chassi - Kaio 
-10. Fazer validação no Funcionário - Kaio
+9. Pesquisar veículo pelo chassi - Kaio - não precisa fazer endpoint
+10. Fazer validação no Funcionário - Kaio 
 11. Fazer validação no Serviço - Rodrigo
 12. Validação de Cliente - Weslley
+13. pesquisar funcionário pelo CPF - Kaio - Kaio - não precisa fazer endpoint
+14. Criar DTO para cadastrar veículo - Weslley 
 
 
 
