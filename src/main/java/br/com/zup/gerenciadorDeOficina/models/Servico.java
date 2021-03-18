@@ -1,4 +1,4 @@
-package br.com.zup.gerenciadorDeOficina.models.;
+package br.com.zup.gerenciadorDeOficina.models;
 
 import br.com.zup.gerenciadorDeOficina.models.enums.Andamento;
 
@@ -12,7 +12,7 @@ public class Servico {
     private LocalDate dataDeSaida;
     private String tipoDeServico;
     private Andamento andamento;
-    private Funcinario funcionario;
+    //private Funcinario funcionario;
     private String responsavelPeloServico;
 
     public Servico() {
@@ -65,15 +65,14 @@ public class Servico {
     public void setAndamento(Andamento andamento) {
         this.andamento = andamento;
     }
-
+    /*
     public Funcinario getFuncionario() {
         return funcionario;
     }
 
     public void setFuncionario(Funcinario funcionario) {
         this.funcionario = funcionario;
-    }
-
+    }*/
     public String getResponsavelPeloServico() {
         return responsavelPeloServico;
     }
