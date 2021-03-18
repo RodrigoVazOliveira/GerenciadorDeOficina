@@ -20,11 +20,4 @@ public class FuncionarioService {
 
     }
 
-    public void validarFuncionario(Funcionario funcionario){
-        for(Funcionario func : funcionarios){
-            if (func.getCpf().equals(funcionario.getCpf())||func.getNomecompleto().equals(funcionario.getNomecompleto()));
-        }
-
-    }
-
 }
