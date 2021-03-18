@@ -68,4 +68,5 @@ public class Veiculo {
     public void setDonoDoVeiculo(Cliente donoDoVeiculo) {
         this.donoDoVeiculo = donoDoVeiculo;
     }
+
 }
