@@ -1,5 +1,6 @@
 package br.com.zup.gerenciadorDeOficina.controllers;
 
+import br.com.zup.gerenciadorDeOficina.dtos.CadastrarServicoDTO;
 import br.com.zup.gerenciadorDeOficina.dtos.CadastrarVeiculoDTO;
 import br.com.zup.gerenciadorDeOficina.models.Funcionario;
 import br.com.zup.gerenciadorDeOficina.models.Servico;
@@ -26,10 +27,9 @@ public class ServicoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Servico cadastrarServico(@RequestBody CadastrarVeiculoDTO cadastrarVeiculoDTO) {
-        Veiculo veiculo = veiculoService.pesquisarChassi(cadastrarVeiculoDTO.getChassi());
-        Funcionario funcionario =
-
-        return servicoService.cadatrar(cadastrarVeiculoDTO.converterCadastrarVeiculoDTOparaVeiculo(veiculo, funcionario));
+    public Servico cadastrarServico(@RequestBody CadastrarServicoDTO cadastrarServicoDTO) {
+        Veiculo veiculo = veiculoService.pesquisarChassi(cadastrarServicoDTO.getChassi());
+        Funcionario funcionario = funcionarioService.pesquisarPorCpf(cadastrarServicoDTO.getCpfFuncionario());
+        return servicoService.cadatrar(cadastrarServicoDTO.converterCadastrarServicoDTOParaServico(veiculo, funcionario));
     }
 }
