@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping("/clientes/")
@@ -17,7 +19,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente cadastrarCliente(@RequestBody Cliente cliente){
+    public Cliente cadastrarCliente(@RequestBody @Valid Cliente cliente){
     clienteService.cadastrarCliente(cliente);
     return cliente;
     }

@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("funcionarios/")
 public class FuncionarioController {
@@ -19,7 +21,7 @@ public class FuncionarioController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Funcionario cadastrarFuncionario (@RequestBody Funcionario funcionario){
+    public Funcionario cadastrarFuncionario (@RequestBody @Valid Funcionario funcionario){
         funcionarioService.cadastrarFuncionario(funcionario);
         return funcionario;
 
