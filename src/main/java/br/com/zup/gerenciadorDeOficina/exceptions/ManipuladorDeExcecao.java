@@ -16,7 +16,10 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        return super.handleMethodArgumentNotValid(ex, headers, status, request);
+        List<ObjetoDeErro> objetoDeErros = getErros(ex);
+        RespostaDeErro respostaDeErro = new RespostaDeErro("Validação" , status.value(),
+                status.getReasonPhrase(), objetoDeErros);
+        return ResponseEntity.status(status).body(respostaDeErro);
     }
 
     private List<ObjetoDeErro> getErros(MethodArgumentNotValidException ex) {
@@ -25,4 +28,6 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
                 .collect(Collectors.toList());
         return objetosDeErro;
     }
+
+    
 }
