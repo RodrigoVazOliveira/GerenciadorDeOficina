@@ -22,6 +22,9 @@ dia 18/03/2021
 13. pesquisar funcionário pelo CPF - Kaio - Kaio - não precisa fazer endpoint - concluído
 14. Criar DTO para cadastrar veículo - Weslley - concluído
 15. Validação de endereço - Weslley - concluído
+16. Validar se cliente já possui cadastro (cpf ou email) - criar uma exceção personalizada - Weslley
+17. Valaidar se funcionario já possui cadastro (cpf) - criar uma exceção personalizada - Kaio
+18. Validar se veículo já possui cadastro pelo chassi (chassi) - criar exceção personalizada - Rodrigo
 
 
 **definição de modelos**
