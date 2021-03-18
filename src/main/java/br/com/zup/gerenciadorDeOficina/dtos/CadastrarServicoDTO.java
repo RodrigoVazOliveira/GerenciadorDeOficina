@@ -14,8 +14,8 @@ import java.time.LocalDate;
 
 public class CadastrarServicoDTO {
 
-    @NotNull(message = "o campo ordem de serviço não foi informado")
-    @NotEmpty(message = "o campo ordem de serviço está vazio")
+    @NotNull(message = "o campo ordemDeServico não foi informado")
+    @NotEmpty(message = "o campo ordemDeServico está vazio")
     private Integer ordemDeServico;
 
     @NotNull(message = "o campo chassi não foi informado")
@@ -28,8 +28,8 @@ public class CadastrarServicoDTO {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDeSaida;
 
-    @NotNull(message = "o campo tipo de serviço não foi informado")
-    @NotEmpty(message = "o campo tipo de serviço está vazio")
+    @NotNull(message = "o campo tipoDeServico não foi informado")
+    @NotEmpty(message = "o campo tipoDeServico está vazio")
     private String tipoDeServico;
 
 
