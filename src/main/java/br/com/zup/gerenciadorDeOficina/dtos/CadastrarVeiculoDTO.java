@@ -108,4 +108,5 @@ public class CadastrarVeiculoDTO {
 
         return veiculo;
     }
+
 }
