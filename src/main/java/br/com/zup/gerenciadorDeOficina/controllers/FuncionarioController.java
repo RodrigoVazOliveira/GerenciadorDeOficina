@@ -1,5 +1,9 @@
 package br.com.zup.gerenciadorDeOficina.controllers;
 
+/**
+ * Criar uma classe para atribuir o Funcionário.
+ */
+
 import br.com.zup.gerenciadorDeOficina.models.Funcionario;
 import br.com.zup.gerenciadorDeOficina.services.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +19,9 @@ public class FuncionarioController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void cadastrarFuncionario (@RequestBody Funcionario funcionario){
+    public Funcionario cadastrarFuncionario (@RequestBody Funcionario funcionario){
         funcionarioService.cadastrarFuncionario(funcionario);
+        return funcionario;
 
     }
 

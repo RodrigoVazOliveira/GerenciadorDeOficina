@@ -14,8 +14,9 @@ public class FuncionarioService {
 
     private List<Funcionario> funcionarios = new ArrayList<>();
 
-    public void cadastrarFuncionario(Funcionario funcionario){
+    public Funcionario cadastrarFuncionario(Funcionario funcionario){
         funcionarios.add(funcionario);
+        return funcionario;
 
     }
 
