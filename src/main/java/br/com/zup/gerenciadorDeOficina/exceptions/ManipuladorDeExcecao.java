@@ -4,10 +4,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,5 +31,22 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
         return objetosDeErro;
     }
 
-    
+    @ExceptionHandler({RuntimeException.class})
+    public RespostaDeErro manipularRuntimeException(RuntimeException ex) {
+        ObjetoDeErro objetoDeErro = new ObjetoDeErro(
+                ex.getMessage(),
+                null
+        );
+        RespostaDeErro respostaDeErro = new RespostaDeErro(
+                null,
+                400,
+                "BAD REQUEST",
+                Arrays.asList(objetoDeErro)
+        );
+
+        return respostaDeErro;
+    }
+}
+
+
 }
