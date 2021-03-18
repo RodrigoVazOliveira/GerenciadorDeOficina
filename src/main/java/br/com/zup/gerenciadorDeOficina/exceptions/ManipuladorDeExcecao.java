@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -46,7 +47,20 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
 
         return respostaDeErro;
     }
+    @ExceptionHandler({ClienteDuplicadoExcecao.class})
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    public RespostaDeErro clienteDuplicadoExcecao(ClienteDuplicadoExcecao excecao) {
+        ObjetoDeErro objetoDeErro = new ObjetoDeErro(
+                excecao.getMessage(),
+                excecao.getCampo()
+        );
+        RespostaDeErro respostaDeErro = new RespostaDeErro(excecao.getTipoErro(),
+                excecao.getStatus(),
+                excecao.getRazao(),
+                Arrays.asList(objetoDeErro));
+        return respostaDeErro;
+    }
 }
 
 
-}
+
