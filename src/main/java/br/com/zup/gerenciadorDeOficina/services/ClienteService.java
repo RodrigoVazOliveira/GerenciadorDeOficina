@@ -15,9 +15,9 @@ public class ClienteService {
         return cliente;
     }
 
-    public Cliente pesquisarPeloCpfOuCnpj(String cpfCnpj) {
+    public Cliente pesquisarPeloCpf(String cpf) {
         for (Cliente cliente : clientes) {
-            if (cliente.getCpf().equalsIgnoreCase(cpfCnpj) || cliente.getCnpj().equalsIgnoreCase(cpfCnpj)) {
+            if (cliente.getCpf().equalsIgnoreCase(cpf)) {
                 return cliente;
             }   
         }
