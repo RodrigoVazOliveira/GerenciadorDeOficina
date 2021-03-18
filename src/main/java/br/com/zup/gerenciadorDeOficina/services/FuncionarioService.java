@@ -20,12 +20,12 @@ public class FuncionarioService {
 
     }
 
-    public Funcionario pesquisarPorCpf(String cpf) {
+    public Funcionario pesquisarPorCpf(String cpf) throws RuntimeException {
         for (Funcionario funcionario : funcionarios) {
             if (funcionario.getCpf().equals(cpf)) {
                 return funcionario;
             }
-        }
+        }throw new RuntimeException("CPF não encontrado");
     }
 
 }

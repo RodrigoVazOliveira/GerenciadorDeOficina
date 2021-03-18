@@ -12,16 +12,15 @@ public class VeiculoService {
 
     public Veiculo cadastrar(Veiculo veiculo) {
         veiculos.add(veiculo);
-
         return veiculo;
     }
 
-    public Veiculo pesquisarChassi(String chassi) {
+    public Veiculo pesquisarChassi(String chassi) throws RuntimeException {
         for (Veiculo veiculo : veiculos) {
             if (veiculo.getChassi().equals(chassi)) {
                 return veiculo;
             }
-        }
+        }throw new RuntimeException("Chassi não encontrado");
     }
 
 }
