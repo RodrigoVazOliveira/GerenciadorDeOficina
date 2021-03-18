@@ -27,12 +27,12 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getEmil() {
-        return emil;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmil(String emil) {
-        this.emil = emil;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelefone() {
