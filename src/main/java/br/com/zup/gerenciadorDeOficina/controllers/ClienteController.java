@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/clientes/")
-public class ControllerCliente {
+public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
