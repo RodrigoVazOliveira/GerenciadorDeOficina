@@ -4,18 +4,44 @@ import br.com.zup.gerenciadorDeOficina.models.Funcionario;
 import br.com.zup.gerenciadorDeOficina.models.Servico;
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 import br.com.zup.gerenciadorDeOficina.models.enums.Andamento;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class CadastrarServicoDTO {
 
+    @NotNull(message = "o campo ordemDeServico não foi informado")
+    @NotEmpty(message = "o campo ordemDeServico está vazio")
     private Integer ordemDeServico;
+
+    @NotNull(message = "o campo chassi não foi informado")
+    @NotEmpty(message = "o campo chassi está vazio")
     private String chassi;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDeEntrada;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDeSaida;
+
+    @NotNull(message = "o campo tipoDeServico não foi informado")
+    @NotEmpty(message = "o campo tipoDeServico está vazio")
     private String tipoDeServico;
+
+
     private Andamento andamento;
+
+    @NotNull(message = "o campo cpfFuncionario não foi informado")
+    @NotEmpty(message = "o campo cpfFuncionario está vazio")
+    @CPF(message = "CPF inválido!")
     private String cpfFuncionario;
+
+    @NotNull(message = "o campo responsavelPeloServico não foi informado")
+    @NotEmpty(message = "o campo responsavelPeloServico está vazio")
     private String responsavelPeloServico;
 
     public CadastrarServicoDTO() {

@@ -18,7 +18,7 @@ dia 17/3/2021
 12. Validação de Cliente - Weslley
 13. pesquisar funcionário pelo CPF - Kaio - Kaio - não precisa fazer endpoint
 14. Criar DTO para cadastrar veículo - Weslley 
-
+15. Validação de endereço - Weslley
 
 
 **definição de modelos**
