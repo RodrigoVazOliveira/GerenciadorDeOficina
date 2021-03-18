@@ -22,7 +22,7 @@ public class VeiculoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Veiculo cadastrar(@RequestBody CadastrarVeiculoDTO cadastrarVeiculoDTO) {
-        Cliente cliente = clienteService.pesquisarPeloCpf(cadastrarVeiculoDTO.getCpfOuCnpj());
+        Cliente cliente = clienteService.pesquisarPeloCpf(cadastrarVeiculoDTO.getCpf());
         return veiculoService.cadastrar(cadastrarVeiculoDTO.converterCadastrarVeiculoDTOparaVeiculo(cliente));
     }
 
