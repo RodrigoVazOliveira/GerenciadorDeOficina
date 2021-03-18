@@ -6,18 +6,21 @@ dia 17/3/2021
 
 1. Cadastrar cliente - Weslley - endpoint /clientes/ POST - conclúido
 2. Cadastrar veículo - Rodrigo - endpoint /veiculos/ POST - concluído
-3. Cadastrar funcionário - Kaio - endpoint /funcionarios/ POST -  
+3. Cadastrar funcionário - Kaio - endpoint /funcionarios/ POST -  concluído
 4. Cadastrar serviço - Rodrigo - endpoint /servicoes/ POST - concluído
 5. Fazer DTO de cadastro do veículo - Rodrigo - concluído
 6. Pesquisar Cliente pelo CPF - Weslley - endpoint /clientes/{cpf}/ - concluído
 7. incluir swagger para testes - Weslley - concluído   
+
+dia 18/03/2021
+
 8. Criar DTO de serviço - Rodrigo - concluído
 9. Pesquisar veículo pelo chassi - Kaio - não precisa fazer endpoint - concluído
 10. Fazer validação no Funcionário - Kaio - concluído
 11. Fazer validação no Serviço - Rodrigo - concluído
 12. Validação de Cliente - Weslley - concluído
-13. pesquisar funcionário pelo CPF - Kaio - Kaio - não precisa fazer endpoint
-14. Criar DTO para cadastrar veículo - Weslley 
+13. pesquisar funcionário pelo CPF - Kaio - Kaio - não precisa fazer endpoint - concluído
+14. Criar DTO para cadastrar veículo - Weslley - concluído
 15. Validação de endereço - Weslley - concluído
 
 
