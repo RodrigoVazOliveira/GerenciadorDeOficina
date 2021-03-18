@@ -3,7 +3,7 @@ package br.com.zup.gerenciadorDeOficina.models;
 public class Cliente {
     private String nomeCompleto;
     private String cpf;
-    private String emil;
+    private String email;
     private String telefone;
 
     private Endereco endereco;
