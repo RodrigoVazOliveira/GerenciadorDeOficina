@@ -5,6 +5,7 @@ package br.com.zup.gerenciadorDeOficina.services;
  */
 
 import br.com.zup.gerenciadorDeOficina.exceptions.FuncionarioExistenteException;
+import br.com.zup.gerenciadorDeOficina.exceptions.FuncionarioNaoLocalizadoException;
 import br.com.zup.gerenciadorDeOficina.models.Funcionario;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class FuncionarioService {
             if (funcionario.getCpf().equals(cpf)) {
                 return funcionario;
             }
-        }throw new FuncionarioExistenteException("O funcinário com o CPF " + cpf + " não foi localizado!");
+        }throw new FuncionarioNaoLocalizadoException("O funcinário com o CPF " + cpf + " não foi localizado!");
     }
 
     public void validarCPF(Funcionario funcionario) {
@@ -45,7 +46,7 @@ public class FuncionarioService {
     public void deletarfuncionarioPeloCPF(String cpf) {
         Funcionario funcionarioDeletar = pesquisarPorCpf(cpf);
         if (funcionarioDeletar == null) {
-            throw new FuncionarioExistenteException("O funcinário com o CPF " + cpf + " não foi localizado!");
+            throw new FuncionarioNaoLocalizadoException("O funcinário com o CPF " + cpf + " não foi localizado!");
         }
 
         funcionarios.remove(funcionarioDeletar);
