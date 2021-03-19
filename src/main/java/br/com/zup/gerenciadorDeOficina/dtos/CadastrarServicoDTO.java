@@ -15,17 +15,16 @@ import java.time.LocalDate;
 public class CadastrarServicoDTO {
 
     @NotNull(message = "o campo ordemDeServico não foi informado")
-    @NotEmpty(message = "o campo ordemDeServico está vazio")
     private Integer ordemDeServico;
 
     @NotNull(message = "o campo chassi não foi informado")
     @NotEmpty(message = "o campo chassi está vazio")
     private String chassi;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDeEntrada;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDeSaida;
 
     @NotNull(message = "o campo tipoDeServico não foi informado")

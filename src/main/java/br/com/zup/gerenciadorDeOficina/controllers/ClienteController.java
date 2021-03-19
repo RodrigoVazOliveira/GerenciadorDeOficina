@@ -5,8 +5,6 @@ import br.com.zup.gerenciadorDeOficina.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
 import javax.validation.Valid;
 
 
@@ -26,13 +24,13 @@ public class ClienteController {
 
     @GetMapping("{cpf}/")
     @ResponseStatus(HttpStatus.OK)
-    public Cliente pesquisarPeloCpfOuCnpj(@PathVariable String cpf){
+    public Cliente pesquisarPeloCpf(@PathVariable String cpf){
         return  clienteService.pesquisarPeloCpf(cpf);
     }
 
     @DeleteMapping("{cpf}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteClientePeloCPF(@PathVariable String cpf){
+    public void deleteClientePeloCpf(@PathVariable String cpf){
         clienteService.deletarClientePeloCPF(cpf);
     }
 

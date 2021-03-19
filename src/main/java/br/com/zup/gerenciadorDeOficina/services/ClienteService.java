@@ -28,7 +28,7 @@ public class ClienteService {
                 return cliente;
             }   
         }
-        throw new ClienteDuplicadoExcecao("Nenhum cliente foi encontrado com CPF: " + cpf);
+        throw new ClienteNaoLocalizadoExcecao("Nenhum cliente foi encontrado com CPF: " + cpf);
     }
 
     public void deletarClientePeloCPF(String cpf){

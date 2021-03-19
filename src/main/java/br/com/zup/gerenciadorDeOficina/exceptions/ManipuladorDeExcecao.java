@@ -163,4 +163,21 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
         return respostaDeErro;
     }
 
+
+    @ExceptionHandler({FuncionarioNaoLocalizadoException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RespostaDeErro funcionarioNaoLocalizadoException(FuncionarioNaoLocalizadoException ex) {
+        ObjetoDeErro objetoDeErro = new ObjetoDeErro(
+                ex.getMessage(),
+                ex.getCampo()
+        );
+        RespostaDeErro respostaDeErro = new RespostaDeErro(
+                ex.getTipoErro(),
+                ex.getStatus(),
+                ex.getRazao(),
+                Arrays.asList(objetoDeErro)
+        );
+
+        return respostaDeErro;
+    }
 }
