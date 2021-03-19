@@ -42,4 +42,15 @@ public class FuncionarioService {
         }
     }
 
+    public void deleteCPF(Funcionario cpf){
+        Funcionario delete = cadastrarFuncionario(cpf);
+        funcionarios.remove(funcionarios);
+    }
+
+    public void deletarfuncionarioPeloCPF(String cpf) throws RuntimeException{
+        Funcionario cpf1 = new Funcionario();
+        cpf1.setCpf(cpf);
+        deletarfuncionarioPeloCPF(cpf);
+    }
+
 }
