@@ -28,22 +28,20 @@ dia 18/03/2021
 
 dia 19/03
 
-19. Ajustar mensagem de exceção de cliente duplicado
-20. Colocar no cliente a validação de not nullo no atributo endereço
-21. Ajustar mensagem de exceção do cliente duplicado. O campo está incorreto. "campo": "Nome do produto ou e-mail"
-22. retirar anotações de datas, as mesmas não funcionam.
-24. retirar o @DateTimeFormat() para @JsonFormat
-25. Criar exceção personalizada para chassi não localizado para busca de veículos
-26. Criar GET para mostrar veículo pelo chassi.
-27. Criar GET para consultar funcinário pelo CPF.
-28. Criar GET para listar todos os veículos.
-29. Criar GET para listar todos os funcinários
-30. Criar GET para listar todos os serviços pelo chassi do carro.  
-31. Criar GET para listar todos os carros.
-31. Criar DELETE para deletar um veículo pelo chassi.
-32. Criar DELETE para excluir cliente pelo CPF.
-33. Criar DELETE para excluir um funcionário pelo CPF.
-34. Criar DELETE para excluir um serviço pelo número de ordem de serviço
+19. Ajustar mensagem de exceção de cliente duplicado - concluído
+20. Colocar no cliente a validação de not nullo no atributo endereço - concluído
+21. Ajustar mensagem de exceção do cliente duplicado. O campo está incorreto. "campo": "Nome do produto ou e-mail" - concluído
+22. retirar o @DateTimeFormat() para @JsonFormat - concluíd
+23. Criar exceção personalizada para chassi não localizado para busca de veículos - concluído
+24. Criar GET para mostrar veículo pelo chassi. - concluído
+25. Criar GET para consultar funcinário pelo CPF.
+26. Criar GET para listar todos os veículos. - concluído
+27. Criar GET para listar todos os funcinários
+28. Criar GET para listar todos os serviços pelo chassi do carro.
+29. Criar DELETE para deletar um veículo pelo chassi.
+30. Criar DELETE para excluir cliente pelo CPF.
+31. Criar DELETE para excluir um funcionário pelo CPF.
+32. Criar DELETE para excluir um serviço pelo número de ordem de serviço
 
 **definição de modelos**
 ----
