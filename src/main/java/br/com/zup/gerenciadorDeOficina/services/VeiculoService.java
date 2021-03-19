@@ -30,7 +30,7 @@ public class VeiculoService {
             }
         }
         if (resultadoVeiculo == null) {
-            throw new RuntimeException("Chassi não encontrado");
+            throw new ChassiException("Chassi não encontrado");
         }
         return resultadoVeiculo;
     }
