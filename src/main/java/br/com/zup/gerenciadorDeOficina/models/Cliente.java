@@ -26,6 +26,7 @@ public class Cliente {
     private String email;
     private String telefone;
 
+    @NotNull(message = "Campo endereco não foi informado")
     private Endereco endereco;
 
     public Cliente() {

@@ -1,10 +1,10 @@
 package br.com.zup.gerenciadorDeOficina.exceptions;
 
 public class FuncionarioExistenteException extends RuntimeException {
-    private int Status = 400;
+    private int Status = 422;
     private String campo = "cpf";
-    private String razao = "Bad Request";
-    private String tipoErro = "Objeto Não encontrado!";
+    private String razao = "UNPROCESSABLE ENTITY";
+    private String tipoErro = "Fubncionário já cadastrado!";
 
     public FuncionarioExistenteException(String message) {
         super(message);

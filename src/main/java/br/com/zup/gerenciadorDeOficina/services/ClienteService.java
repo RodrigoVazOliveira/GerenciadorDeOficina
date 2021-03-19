@@ -16,7 +16,7 @@ public class ClienteService {
             clientes.add(cliente);
             return cliente;
         }
-        throw new ClienteDuplicadoExcecao("O CPF" + cliente.getCpf() + " ou e-mail " + cliente.getEmail() +
+        throw new ClienteDuplicadoExcecao("O CPF " + cliente.getCpf() + " e e-mail " + cliente.getEmail() +
                 " cliente EXISTENTE!");
     }
 

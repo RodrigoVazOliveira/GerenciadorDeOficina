@@ -2,9 +2,9 @@ package br.com.zup.gerenciadorDeOficina.exceptions;
 
 public class ClienteDuplicadoExcecao extends RuntimeException{
     private int Status = 422;
-    private String campo = "Nome do produto ou e-mail";
-    private String razao = "Unprocessable Entity";
-    private String tipoErro = "Cliente duplicado!";
+    private String campo = "CPF e E-Mail";
+    private String razao = "UNPROCESSABLE ENTITY";
+    private String tipoErro = "Cliente já cadastrado!";
 
     public ClienteDuplicadoExcecao(String message) {
         super(message);
