@@ -15,6 +15,10 @@ public class FuncionarioService {
 
     private List<Funcionario> funcionarios = new ArrayList<>();
 
+    public List<Funcionario> listarTodosFuncionario(){
+        return funcionarios;
+    }
+
     public Funcionario cadastrarFuncionario(Funcionario funcionario){
         validarCPF(funcionario);
         funcionarios.add(funcionario);

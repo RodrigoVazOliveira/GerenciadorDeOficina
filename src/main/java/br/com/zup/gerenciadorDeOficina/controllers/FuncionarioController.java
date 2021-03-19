@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("funcionarios/")
@@ -25,6 +26,12 @@ public class FuncionarioController {
         funcionarioService.cadastrarFuncionario(funcionario);
         return funcionario;
 
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Funcionario> listarTodosFuncionario(){
+        return funcionarioService.listarTodosFuncionario();
     }
 
 }
