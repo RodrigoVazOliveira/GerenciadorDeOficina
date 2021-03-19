@@ -41,8 +41,9 @@ public class VeiculoService {
         }
 
         return veiculos;
+    }
 
-    public void validarChassi (Veiculo chassi){
+    public void validarChassi(Veiculo chassi){
         for (Veiculo numChassi : veiculos){
             if (numChassi.getChassi().equals(chassi.getChassi())){
                 throw new ChassiException("chassi não localizado");
