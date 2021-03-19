@@ -36,10 +36,10 @@ dia 19/03
 24. Criar GET para mostrar veículo pelo chassi. - concluído
 25. Criar GET para consultar funcinário pelo CPF.
 26. Criar GET para listar todos os veículos. - concluído
-27. Criar GET para listar todos os funcinários
-28. Criar GET para listar todos os serviços pelo chassi do carro.
-29. Criar DELETE para deletar um veículo pelo chassi.
-30. Criar DELETE para excluir cliente pelo CPF.
+27. Criar GET para listar todos os funcinários - concluído
+28. Criar GET para listar todos os serviços pelo chassi do veículo. - concluído
+29. Criar DELETE para deletar um veículo pelo chassi. - concluído
+30. Criar DELETE para excluir cliente pelo CPF. - concluído
 31. Criar DELETE para excluir um funcionário pelo CPF.
 32. Criar DELETE para excluir um serviço pelo número de ordem de serviço
 
