@@ -1,5 +1,6 @@
 package br.com.zup.gerenciadorDeOficina.services;
 
+import br.com.zup.gerenciadorDeOficina.exceptions.ChassiException;
 import br.com.zup.gerenciadorDeOficina.exceptions.ListaVeiculoVazia;
 import br.com.zup.gerenciadorDeOficina.exceptions.VeiculoDuplicadoExcecao;
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
@@ -13,6 +14,7 @@ public class VeiculoService {
     private List<Veiculo> veiculos = new ArrayList<>();
 
     public Veiculo cadastrar(Veiculo veiculo) {
+        validarChassi(veiculo);
         if (veiculos.contains(veiculo)) {
             throw new VeiculoDuplicadoExcecao("o veículo com chassi " + veiculo.getChassi() + " já existe no sistema!");
         }
@@ -27,11 +29,9 @@ public class VeiculoService {
                 resultadoVeiculo = veiculo;
             }
         }
-
         if (resultadoVeiculo == null) {
             throw new RuntimeException("Chassi não encontrado");
         }
-
         return resultadoVeiculo;
     }
 
@@ -41,6 +41,14 @@ public class VeiculoService {
         }
 
         return veiculos;
+
+    public void validarChassi (Veiculo chassi){
+        for (Veiculo numChassi : veiculos){
+            if (numChassi.getChassi().equals(chassi.getChassi())){
+                throw new ChassiException("chassi não localizado");
+            }
+        }
+
     }
 
 }

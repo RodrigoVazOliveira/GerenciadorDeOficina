@@ -82,21 +82,35 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({FuncionarioExistenteException.class})
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public RespostaDeErro veiculoDuplicadoExcecao(FuncionarioExistenteException ex) {
+    public RespostaDeErro funcionarioExistente(FuncionarioExistenteException ex) {
         ObjetoDeErro objetoDeErro = new ObjetoDeErro(
                 ex.getMessage(),
-                ex.getCampo()
-        );
+                ex.getCampo());
+
         RespostaDeErro respostaDeErro = new RespostaDeErro(
                 ex.getTipoErro(),
                 ex.getStatus(),
                 ex.getRazao(),
-                Arrays.asList(objetoDeErro)
-        );
+                Arrays.asList(objetoDeErro));
 
         return respostaDeErro;
     }
 
+    @ExceptionHandler({ChassiException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RespostaDeErro chassiNaoEncontrado(ChassiException ex) {
+        ObjetoDeErro objetoDeErro = new ObjetoDeErro(
+                ex.getMessage(),
+                ex.getCampo());
+
+        RespostaDeErro respostaDeErro = new RespostaDeErro(
+                ex.getTipoErro(),
+                ex.getStatus(),
+                ex.getRazao(),
+                Arrays.asList(objetoDeErro));
+
+        return respostaDeErro;
+    }
 
     @ExceptionHandler({ListaVeiculoVazia.class})
     @ResponseStatus(HttpStatus.OK)
@@ -114,4 +128,5 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
 
         return respostaDeErro;
     }
+
 }

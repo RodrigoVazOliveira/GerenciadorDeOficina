@@ -4,7 +4,7 @@ package br.com.zup.gerenciadorDeOficina.models;
  * Classe para definir os atributos do Funcionário.
  */
 
-import org.springframework.format.annotation.DateTimeFormat;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -15,7 +15,7 @@ public class Funcionario {
     private String nomecompleto;
     @NotNull(message = "cpf não encontrado")
     private String cpf;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
 
