@@ -42,15 +42,13 @@ public class FuncionarioService {
         }
     }
 
-    public void deleteCPF(Funcionario cpf){
-        Funcionario delete = cadastrarFuncionario(cpf);
-        funcionarios.remove(funcionarios);
-    }
+    public void deletarfuncionarioPeloCPF(String cpf) {
+        Funcionario funcionarioDeletar = pesquisarPorCpf(cpf);
+        if (funcionarioDeletar == null) {
+            throw new FuncionarioExistenteException("O funcinário com o CPF " + cpf + " não foi localizado!");
+        }
 
-    public void deletarfuncionarioPeloCPF(String cpf) throws RuntimeException{
-        Funcionario cpf1 = new Funcionario();
-        cpf1.setCpf(cpf);
-        deletarfuncionarioPeloCPF(cpf);
+        funcionarios.remove(funcionarioDeletar);
     }
 
 }

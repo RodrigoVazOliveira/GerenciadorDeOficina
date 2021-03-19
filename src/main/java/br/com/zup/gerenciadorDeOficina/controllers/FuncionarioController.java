@@ -34,15 +34,9 @@ public class FuncionarioController {
         return funcionarioService.listarTodosFuncionario();
     }
 
-    @DeleteMapping("funcionario/{cpf}/")
+    @DeleteMapping("{cpf}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletefuncionarioPeloCPF(@PathVariable String cpf) {
-        try {
-            funcionarioService.deletarfuncionarioPeloCPF(cpf);
-        } catch (RuntimeException ex) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
-        }
-
+        funcionarioService.deletarfuncionarioPeloCPF(cpf);
     }
-
 }
