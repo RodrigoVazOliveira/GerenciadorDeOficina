@@ -29,4 +29,15 @@ public class ClienteController {
     public Cliente pesquisarPeloCpfOuCnpj(@PathVariable String cpf){
         return  clienteService.pesquisarPeloCpf(cpf);
     }
+
+    @DeleteMapping("/cliente/{cpf}/")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteClientePeloCPF(@PathVariable String cpf){
+        try {
+            clienteService.deletarClientePeloCPF(cpf);
+        }catch (RuntimeException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
+        }
+    }
+
 }

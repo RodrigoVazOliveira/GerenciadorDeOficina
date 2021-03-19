@@ -41,7 +41,4 @@ public class VeiculoController {
         return veiculoService.listarTodosVeiculos();
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public
 }
