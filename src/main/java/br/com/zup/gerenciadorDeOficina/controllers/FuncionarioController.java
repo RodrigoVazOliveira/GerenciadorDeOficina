@@ -9,7 +9,7 @@ import br.com.zup.gerenciadorDeOficina.services.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -30,8 +30,19 @@ public class FuncionarioController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Funcionario> listarTodosFuncionario(){
+    public List<Funcionario> listarTodosFuncionario() {
         return funcionarioService.listarTodosFuncionario();
+    }
+
+    @DeleteMapping("funcionario/{cpf}/")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletefuncionarioPeloCPF(@PathVariable String cpf) {
+        try {
+            funcionarioService.deletarfuncionarioPeloCPF(cpf);
+        } catch (RuntimeException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
+        }
+
     }
 
 }

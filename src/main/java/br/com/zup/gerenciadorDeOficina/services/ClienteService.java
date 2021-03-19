@@ -29,4 +29,15 @@ public class ClienteService {
         throw new ClienteDuplicadoExcecao("Nenhum cliente foi encontrado com CPF: " + cpf);
     }
 
+    public void deleteCPF(Cliente cpf){
+        Cliente delete = cadastrarCliente(cpf);
+        clientes.remove(clientes);
+    }
+
+    public void deletarClientePeloCPF(String cpf) throws RuntimeException{
+        Cliente cpf1 = new Cliente();
+        cpf1.setCpf(cpf);
+        deletarClientePeloCPF(cpf);
+    }
+
 }
