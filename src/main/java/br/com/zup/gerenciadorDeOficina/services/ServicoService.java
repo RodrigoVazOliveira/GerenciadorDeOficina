@@ -39,4 +39,16 @@ public class ServicoService {
         return servicosDoCliente;
     }
 
+    public boolean deletarOrdemServico(Integer servico){
+        for(Servico ordemServico : servicos){
+            if(ordemServico.getOrdemDeServico() == ordemServico.getOrdemDeServico() ){
+                    servicos.remove(ordemServico);
+                    return true;
+            }
+        }
+        throw new RuntimeException("Nome não encontrado!");
+    }
+
 }
+
+
