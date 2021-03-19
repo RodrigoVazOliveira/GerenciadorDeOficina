@@ -31,13 +31,13 @@ public class FuncionarioService {
             if (funcionario.getCpf().equals(cpf)) {
                 return funcionario;
             }
-        }throw new RuntimeException("CPF não encontrado");
+        }throw new FuncionarioExistenteException("O funcinário com o CPF " + cpf + " não foi localizado!");
     }
 
     public void validarCPF(Funcionario funcionario) {
         for (Funcionario funcionarioCPF : funcionarios){
             if (funcionarioCPF.getCpf().equals(funcionario.getCpf())){
-                throw new FuncionarioExistenteException("O cpf já esta cadastrado!");
+                throw new FuncionarioExistenteException("O CPF já esta cadastrado!");
             }
         }
     }
