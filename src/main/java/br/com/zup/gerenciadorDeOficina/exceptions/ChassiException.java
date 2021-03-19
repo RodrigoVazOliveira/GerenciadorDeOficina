@@ -1,9 +1,5 @@
 package br.com.zup.gerenciadorDeOficina.exceptions;
 
-/**
- * exceptionChassi
- */
-
 public class ChassiException extends RuntimeException {
     private int Status = 400;
     private String campo = "chassi";

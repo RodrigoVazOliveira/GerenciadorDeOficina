@@ -1,7 +1,10 @@
 package br.com.zup.gerenciadorDeOficina.services;
 
 import br.com.zup.gerenciadorDeOficina.exceptions.ChassiException;
+<<<<<<< HEAD
 import br.com.zup.gerenciadorDeOficina.exceptions.ListaVeiculoVazia;
+=======
+>>>>>>> f34ad9d (Criar método de resposta de erro do chassi)
 import br.com.zup.gerenciadorDeOficina.exceptions.VeiculoDuplicadoExcecao;
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 import org.springframework.stereotype.Service;
