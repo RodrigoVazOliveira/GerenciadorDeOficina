@@ -22,7 +22,7 @@ public class VeiculoService {
         return veiculo;
     }
 
-    public Veiculo pesquisarChassi(String chassi) throws RuntimeException {
+    public Veiculo pesquisarChassi(String chassi) {
         Veiculo resultadoVeiculo = null;
         for (Veiculo veiculo : veiculos) {
             if (veiculo.getChassi().equals(chassi)) {
@@ -30,7 +30,7 @@ public class VeiculoService {
             }
         }
         if (resultadoVeiculo == null) {
-            throw new RuntimeException("Chassi não encontrado");
+            throw new ChassiException("Chassi não encontrado");
         }
         return resultadoVeiculo;
     }
@@ -50,6 +50,11 @@ public class VeiculoService {
             }
         }
 
+    }
+
+    public void deletar(String chassi) {
+        Veiculo deletar = pesquisarChassi(chassi);
+        veiculos.remove(deletar);
     }
 
 }

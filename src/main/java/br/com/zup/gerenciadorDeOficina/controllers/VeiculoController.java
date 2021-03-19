@@ -40,4 +40,10 @@ public class VeiculoController {
     public List<Veiculo> mostrarTodosOsVeiculos() {
         return veiculoService.listarTodosVeiculos();
     }
+
+    @DeleteMapping("{chassi}/")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarVeiculoPeloChassi(@PathVariable String chassi) {
+        veiculoService.deletar(chassi);
+    }
 }
