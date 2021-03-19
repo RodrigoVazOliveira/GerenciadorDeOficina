@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/veiculos/")
@@ -34,4 +35,9 @@ public class VeiculoController {
         return veiculoService.pesquisarChassi(chassi);
     }
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Veiculo> mostrarTodosOsVeiculos() {
+        return veiculoService.listarTodosVeiculos();
+    }
 }
