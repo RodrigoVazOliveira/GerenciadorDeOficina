@@ -1,7 +1,9 @@
 package br.com.zup.gerenciadorDeOficina.services;
 
 import br.com.zup.gerenciadorDeOficina.exceptions.ClienteDuplicadoExcecao;
+import br.com.zup.gerenciadorDeOficina.exceptions.ClienteNaoLocalizadoExcecao;
 import br.com.zup.gerenciadorDeOficina.models.Cliente;
+import ch.qos.logback.core.net.server.Client;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +31,14 @@ public class ClienteService {
         throw new ClienteDuplicadoExcecao("Nenhum cliente foi encontrado com CPF: " + cpf);
     }
 
-    public void deleteCPF(Cliente cpf){
-        Cliente delete = cadastrarCliente(cpf);
-        clientes.remove(clientes);
-    }
+    public void deletarClientePeloCPF(String cpf){
+        Cliente clienteDeletar = pesquisarPeloCpf(cpf);
 
-    public void deletarClientePeloCPF(String cpf) throws RuntimeException{
-        Cliente cpf1 = new Cliente();
-        cpf1.setCpf(cpf);
-        deletarClientePeloCPF(cpf);
+        if (clienteDeletar == null) {
+            throw new ClienteNaoLocalizadoExcecao("Cliente não localizado com " + cpf);
+        }
+
+        clientes.remove(clienteDeletar);
     }
 
 }

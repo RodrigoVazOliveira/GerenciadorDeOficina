@@ -30,14 +30,10 @@ public class ClienteController {
         return  clienteService.pesquisarPeloCpf(cpf);
     }
 
-    @DeleteMapping("/cliente/{cpf}/")
+    @DeleteMapping("{cpf}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteClientePeloCPF(@PathVariable String cpf){
-        try {
-            clienteService.deletarClientePeloCPF(cpf);
-        }catch (RuntimeException ex) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
-        }
+        clienteService.deletarClientePeloCPF(cpf);
     }
 
 }
