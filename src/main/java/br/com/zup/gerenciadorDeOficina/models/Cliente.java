@@ -84,4 +84,5 @@ public class Cliente {
     public int hashCode() {
         return Objects.hash(cpf, email);
     }
+
 }

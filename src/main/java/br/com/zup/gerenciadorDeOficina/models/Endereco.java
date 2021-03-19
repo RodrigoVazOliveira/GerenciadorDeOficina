@@ -72,4 +72,5 @@ public class Endereco {
     public void setCep(int cep) {
         this.cep = cep;
     }
+
 }
