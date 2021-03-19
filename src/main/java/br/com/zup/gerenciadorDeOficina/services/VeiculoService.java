@@ -41,6 +41,7 @@ public class VeiculoService {
         }
 
         return veiculos;
+    }
 
     public void validarChassi (Veiculo chassi){
         for (Veiculo numChassi : veiculos){

@@ -40,4 +40,8 @@ public class VeiculoController {
     public List<Veiculo> mostrarTodosOsVeiculos() {
         return veiculoService.listarTodosVeiculos();
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public
 }
