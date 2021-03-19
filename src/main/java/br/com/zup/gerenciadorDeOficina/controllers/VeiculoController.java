@@ -28,4 +28,10 @@ public class VeiculoController {
         return veiculoService.cadastrar(cadastrarVeiculoDTO.converterCadastrarVeiculoDTOparaVeiculo(cliente));
     }
 
+    @GetMapping("{chassi}/")
+    @ResponseStatus(HttpStatus.OK)
+    public Veiculo pesquisarVeiculoPorChassi(@PathVariable String chassi) {
+        return veiculoService.pesquisarChassi(chassi);
+    }
+
 }
