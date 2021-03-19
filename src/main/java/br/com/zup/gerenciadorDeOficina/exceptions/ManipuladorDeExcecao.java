@@ -81,7 +81,7 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler({FuncionarioExistenteException.class})
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public RespostaDeErro veiculoDuplicadoExcecao(FuncionarioExistenteException ex) {
         ObjetoDeErro objetoDeErro = new ObjetoDeErro(
                 ex.getMessage(),

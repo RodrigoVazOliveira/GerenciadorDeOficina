@@ -3,7 +3,7 @@ package br.com.zup.gerenciadorDeOficina.exceptions;
 public class VeiculoDuplicadoExcecao extends RuntimeException {
     private int status = 422;
     private String campo = "chassi";
-    private String razao = "UNPROCESSABLE_ENTITY";
+    private String razao = "UNPROCESSABLE ENTITY";
     private String tipoErro = "Veículo já cadastrado!";
 
     public VeiculoDuplicadoExcecao(String message) {
