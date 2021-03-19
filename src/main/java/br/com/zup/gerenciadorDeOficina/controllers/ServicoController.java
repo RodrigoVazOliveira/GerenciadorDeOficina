@@ -10,6 +10,7 @@ import br.com.zup.gerenciadorDeOficina.services.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -39,6 +40,18 @@ public class ServicoController {
     @ResponseStatus(HttpStatus.OK)
     public List<Servico> mostrarTodosServicosDoClientePorCpf(@PathVariable String cpf) {
         return servicoService.listarTodosServicosPeloCpfDoCliente(cpf);
+    }
+
+    @DeleteMapping("{ordemServico}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarOrdemServico(@PathVariable Integer ordemServico){
+
+        try{
+            servicoService.deletarOrdemServico(ordemServico);
+        }catch (RuntimeException erro){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, erro.getMessage());
+        }
+
     }
 
 }
