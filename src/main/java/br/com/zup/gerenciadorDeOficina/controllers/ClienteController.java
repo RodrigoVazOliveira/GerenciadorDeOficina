@@ -26,13 +26,13 @@ public class ClienteController {
 
     @GetMapping("{cpf}/")
     @ResponseStatus(HttpStatus.OK)
-    public Cliente pesquisarPeloCpfOuCnpj(@PathVariable String cpf){
+    public Cliente pesquisarPeloCpf(@PathVariable String cpf){
         return  clienteService.pesquisarPeloCpf(cpf);
     }
 
     @DeleteMapping("{cpf}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteClientePeloCPF(@PathVariable String cpf){
+    public void deleteClientePeloCpf(@PathVariable String cpf){
         clienteService.deletarClientePeloCPF(cpf);
     }
 
