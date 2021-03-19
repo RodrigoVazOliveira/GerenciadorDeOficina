@@ -1,5 +1,6 @@
 package br.com.zup.gerenciadorDeOficina.services;
 
+import br.com.zup.gerenciadorDeOficina.exceptions.ListaVeiculoVazia;
 import br.com.zup.gerenciadorDeOficina.exceptions.VeiculoDuplicadoExcecao;
 import br.com.zup.gerenciadorDeOficina.models.Veiculo;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,14 @@ public class VeiculoService {
         }
 
         return resultadoVeiculo;
+    }
+
+    public List<Veiculo> listarTodosVeiculos() {
+        if (veiculos.size() == 0) {
+            throw new ListaVeiculoVazia("Não existe nenhum veículo cadastrado!");
+        }
+
+        return veiculos;
     }
 
 }
